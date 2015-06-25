@@ -1,0 +1,77 @@
+Attribute VB_Name = "StraightLineGlobals"
+Option Compare Database
+
+Public glb_dropoff
+Public glb_processing
+Public glb_archive
+Public glb_outputdev
+Public glb_bobj_extract
+Public glb_bobj_prelim
+Public glb_bobj_final
+
+Option Explicit
+
+Public Sub Init_Globals()
+    'bobj queries
+    glb_bobj_extract = "Tmplt_CMRPT35Data_Extract_bobj.xlsm"
+    glb_bobj_prelim = "Tmplt_CMRPT35Data_Preliminary_bobj.xlsm"
+    glb_bobj_final = "Tmplt_CMRPT35Data_Final_bobj.xlsm"
+
+    ' fsovault variable definitions - standard PRODUCTION variables
+    glb_dropoff = "\\fsovault.gsfc.nasa.gov\straightline_rpt\Drop Off"
+    glb_processing = "\\fsovault.gsfc.nasa.gov\straightline_rpt\SL_db\Processing"
+    glb_archive = "\\fsovault.gsfc.nasa.gov\straightline_rpt\dropoff\Archive"
+    glb_outputdev = "\\fsovault.gsfc.nasa.gov\straightline_rpt\outputdev"
+
+    
+    'local variable definitions for testing
+    'glb_dropoff = "C:\Users\jlbrady1\Documents\StraightLine Info\Dropoff"
+    'glb_processing = "C:\Users\jlbrady1\Documents\StraightLine Info\Processing"
+    'glb_archive = "C:\Users\jlbrady1\Documents\StraightLine Info\Archive"
+    'glb_outputdev = "C:\Users\jlbrady1\Documents\StraightLine Info\outputdev"
+End Sub
+
+Public Sub Init_Globals_Development()
+    'bobj queries
+    glb_bobj_extract = "Tmplt_CMRPT35Data_Extract_bobj.xlsm"
+    glb_bobj_prelim = "Tmplt_CMRPT35Data_Preliminary_bobj.xlsm"
+    glb_bobj_final = "Tmplt_CMRPT35Data_Final_bobj.xlsm"
+
+    ' fsovault variable definitions - standard PRODUCTION variables
+    'glb_dropoff = "\\fsovault.gsfc.nasa.gov\straightline_rpt\dropoff"
+    'glb_processing = "\\fsovault.gsfc.nasa.gov\straightline_rpt\SL_db\Processing"
+    'glb_archive = "\\fsovault.gsfc.nasa.gov\straightline_rpt\dropoff\Archive"
+    'glb_outputdev = "\\fsovault.gsfc.nasa.gov\straightline_rpt\outputdev"
+
+    
+    'local variable definitions for testing
+    glb_dropoff = "C:\Users\jlbrady1\Documents\StraightLine Info\Dropoff"
+    glb_processing = "C:\Users\jlbrady1\Documents\StraightLine Info\Processing"
+    glb_archive = "C:\Users\jlbrady1\Documents\StraightLine Info\Archive"
+    glb_outputdev = "C:\Users\jlbrady1\Documents\StraightLine Info\outputdev"
+End Sub
+Public Sub Init_Globals_Production()
+    'bobj queries
+    glb_bobj_extract = "Tmplt_CMRPT35Data_Extract_bobj.xlsm"
+    glb_bobj_prelim = "Tmplt_CMRPT35Data_Preliminary_bobj.xlsm"
+    glb_bobj_final = "Tmplt_CMRPT35Data_Final_bobj.xlsm"
+
+    ' fsovault variable definitions - standard PRODUCTION variables
+    glb_dropoff = "\\fsovault.gsfc.nasa.gov\straightline_rpt\Drop Off"
+    glb_processing = "\\fsovault.gsfc.nasa.gov\straightline_rpt\SL_db\Processing"
+    glb_archive = "\\fsovault.gsfc.nasa.gov\straightline_rpt\dropoff\Archive"
+    glb_outputdev = "\\fsovault.gsfc.nasa.gov\straightline_rpt\outputdev"
+
+    
+    'local variable definitions for testing
+    'glb_dropoff = "C:\Users\jlbrady1\Documents\StraightLine Info\Dropoff"
+    'glb_processing = "C:\Users\jlbrady1\Documents\StraightLine Info\Processing"
+    'glb_archive = "C:\Users\jlbrady1\Documents\StraightLine Info\Archive"
+    'glb_outputdev = "C:\Users\jlbrady1\Documents\StraightLine Info\outputdev"
+End Sub
+
+Function FileExists(ByVal FileToTest As String) As Boolean
+   FileExists = (Dir(FileToTest) <> "")
+End Function
+
+
