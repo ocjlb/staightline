@@ -1,0 +1,27 @@
+Attribute VB_Name = "Code"
+Option Compare Database
+
+'---------------------------------------------------------------------------------------
+' Procedure : GetCurrentPath
+' DateTime  : 08/23/2010
+' Author    : Rx
+' Purpose   : Returns Current Path of a Linked Table in Access
+'---------------------------------------------------------------------------------------
+'  To test in the Immediate window:       ? getcurrentpath("Const")
+Function GetCurrentPath(MyLinkedTable As String) As String
+10        On Error GoTo PROC_ERROR
+20        GetCurrentPath = Mid(CurrentDb.TableDefs(MyLinkedTable).Connect, InStr(1, CurrentDb.TableDefs(MyLinkedTable).Connect, "=") + 1)
+          ' non-linked table returns blank - the Instr removes the "Database="
+PROC_EXIT:
+30        On Error Resume Next
+40        Exit Function
+PROC_ERROR:
+50        Select Case Err.Number
+              'Case ###         ' Add your own error management or log error to logging table
+              Case Else
+                   'a custom log usage function commented out
+                   'function LogUsage(ByVal strFormName As String, strCallingProc As String, Optional ControlName) As Boolean
+60                'call LogUsage Err.Number, "basRelinkTables", "GetCurrentPath" ()
+70        End Select
+80        Resume PROC_EXIT
+End Function
