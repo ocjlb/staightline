@@ -6,7 +6,6 @@ Option Compare Database
 ' DateTime  : 08/23/2010
 ' Author    : Rx
 ' Purpose   : Returns Current Path of a Linked Table in Access
-' added this line 11/1/16
 '---------------------------------------------------------------------------------------
 '  To test in the Immediate window:       ? getcurrentpath("Const")
 Function GetCurrentPath(MyLinkedTable As String) As String
